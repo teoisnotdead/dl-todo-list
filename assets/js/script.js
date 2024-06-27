@@ -16,4 +16,10 @@ const tasks = [
   }
 ]
 
-console.log(tasks);
+const inputTask = document.querySelector('#task');
+const btnAddTask = document.querySelector('#add');
+const toDoList = document.querySelector('#todo-list');
+
+console.log(inputTask);
+console.log(btnAddTask);
+console.log(toDoList);
