@@ -26,7 +26,6 @@ const tasks = [
   }
 ]
 
-
 const inputTaskContainer = document.querySelector('#add-task-container')
 const inputTask = document.querySelector('#task')
 const btnAddTask = document.querySelector('#add')
