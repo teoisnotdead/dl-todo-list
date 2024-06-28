@@ -12,9 +12,11 @@
 
   <div class="container mx-auto">
     <h1 class="text-4xl text-center mt-10">TODO List</h1>
-    <div class="flex justify-center mt-10">
-      <input type="text" class="border border-gray-300 p-2 w-1/2" id="task" placeholder="Ingresa una tarea">
-      <button class="bg-blue-500 text-white py-2 px-4 ml-2 hover:bg-blue-400 rounded" id="add">Agregar</button>
+    <div id="add-task-container" class="flex flex-col">
+      <div class="flex justify-center mt-10">
+        <input type="text" class="border border-gray-300 p-2 w-1/2" id="task" placeholder="Ingresa una tarea">
+        <button class="bg-blue-500 text-white py-2 px-4 ml-2 hover:bg-blue-400 rounded" id="add">Agregar</button>
+      </div>
     </div>
     <ul class="list-decimal mt-5" id="todo-list">
       <!-- <li class="border border-gray-300 p-2 mt-2 flex justify-between">

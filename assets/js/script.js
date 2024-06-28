@@ -27,7 +27,7 @@ const tasks = [
 ]
 
 
-
+const inputTaskContainer = document.querySelector('#add-task-container')
 const inputTask = document.querySelector('#task')
 const btnAddTask = document.querySelector('#add')
 const toDoList = document.querySelector('#todo-list')
@@ -57,6 +57,20 @@ const renderToDoList = (taskList) => {
 }
 
 const addTask = () => {
+  if (inputTask.value === '') {
+    const info = document.createElement('p')
+    info.textContent = 'Debes ingresar una tarea'
+    info.className = 'mx-auto text-red-500 mt-2 transition-all duration-500'
+    inputTaskContainer.appendChild(info)
+    setTimeout(() => {
+      info.classList.add('opacity-0')
+      setTimeout(() => {
+        info.remove()
+      }, 500)
+    }, 500)
+    return
+  }
+
   const task = {
     id: generateId(),
     name: inputTask.value,
@@ -69,10 +83,8 @@ const addTask = () => {
 }
 
 const completeTask = (id) => {
-  console.log('id', id);
-  console.log('tasks', tasks);
   const task = tasks.find(task => task.id === id)
-  console.log('task', task);
+
   task.completed = !task.completed
   toDoList.innerHTML = ''
   renderToDoList(tasks)
@@ -80,6 +92,7 @@ const completeTask = (id) => {
 
 const deleteTask = (id) => {
   const index = tasks.findIndex(task => task.id === id)
+
   tasks.splice(index, 1)
   toDoList.innerHTML = ''
   renderToDoList(tasks)
@@ -88,15 +101,11 @@ const deleteTask = (id) => {
 btnAddTask.addEventListener('click', addTask)
 
 toDoList.addEventListener('click', (e) => {
-  console.log('e', e.target)
   const target = e.target
   const parent = target.parentElement.parentElement
-  console.log('parent', parent);
   const id = parent.querySelector('strong').textContent.split(' ')[1]
 
-  console.log('id1', id);
   if (target.textContent === 'Completar' || target.textContent === 'Dejar pendiente') {
-    console.log('target', target.textContent);
     completeTask(id)
   }
 
