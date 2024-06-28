@@ -10,9 +10,9 @@ Desafío 5: Todo List
 
 Se crea una lista de tareas con las siguientes funcionalidades:
 
-- Agregar tareas ❌
-- Eliminar tareas ❌
-- Mostar tareas ID y nombre ❌
-- Marcar tareas como completadas ❌
-- Mostrar cantidad de tareas ❌
-- Mostrar cantidad de tareas completadas ❌
+- Agregar tareas ✅
+- Eliminar tareas ✅
+- Mostar tareas ID y nombre ✅
+- Cambiar estado de las tareas de pendiente a completada y viceversa ✅
+- Mostrar total de tareas ✅
+- Mostrar cantidad de tareas completadas ✅
